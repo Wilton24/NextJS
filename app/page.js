@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import ImageSlideshow from '@/components/images/imageSlideshow';
+import NavLink from '@/components/UI/NavLink';
 
 import classes from './page.module.css';
 
@@ -16,8 +16,8 @@ export default function Home() {
             <p>Taste & share food from all over the world.</p>
           </div>
           <div className={classes.cta}>
-            <Link href="/community">Join the Community</Link>
-            <Link href="/meals">Explore Meals</Link>
+            <NavLink message="Join the Community" />
+            <NavLink message="Browse Meals" />
           </div>
         </div>
       </header>

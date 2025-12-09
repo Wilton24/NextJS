@@ -1,7 +1,21 @@
+import classes from "./page.module.css";
+import NavLink from "@/components/UI/NavLink";
+
+
 export default function MealsPage() {
     return (
-        <div>
-            <h1>Meals Page</h1>
-        </div>
+        <>
+            <header className={classes.header}>
+                <h1>Delicious Meals, createed {' '}</h1>
+                <span className={classes.highlight}>just for you</span>
+                <p>Choose your favorite recipe and cook it yourself. It is easy and fun!</p>
+                <p className={classes.cta}>
+                    <NavLink pathName="/meals/share" message="Share your favorite Recipe" />
+                </p>
+            </header>
+            <main className={classes.main}>
+
+            </main>
+        </>
     )
 }
