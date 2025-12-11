@@ -1,3 +1,4 @@
+import MealsGrid from "@/components/meals/meals.grid";
 import classes from "./page.module.css";
 import NavLink from "@/components/UI/NavLink";
 
@@ -14,7 +15,7 @@ export default function MealsPage() {
                 </p>
             </header>
             <main className={classes.main}>
-
+                <MealsGrid meals={[]} />
             </main>
         </>
     )
