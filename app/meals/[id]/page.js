@@ -4,15 +4,11 @@ import Image from 'next/image';
 import Picture from '@/assets/pizza.jpg'
 import { notFound } from 'next/navigation';
 
-export default function SpecificMealPage({ params }) {
+export default async function SpecificMealPage({ params }) {
 
-    // const { id } = params
-    const meal = getMealById(params.id)
+    const meal = await getMealById(params.id)
 
     // meal.instructions = meal.instructions.replace(/\n/g, '<br/>');
-
-    console.log('Fetched Meal Data:', meal);
-
     if (!meal) {
         return notFound();
     }
