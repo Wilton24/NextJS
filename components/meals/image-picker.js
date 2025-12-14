@@ -1,14 +1,24 @@
 'use client';
-import { useRef } from 'react';
-import styles from './image-picker.module.css'
+import { useRef, useState } from 'react';
+import styles from './image-picker.module.css';
+import Image from 'next/image';
 
 export default function ImagePicker({ label, name }) {
-
+    const [image, setImage] = useState(null);
     const imageInputRef = useRef();
 
     function handlePickImage() {
         imageInputRef.current.click();
     };
+
+
+    function handleImageChange(event) {
+        const file = event.target.files[0];
+        if (!file) {
+            return;
+        }
+        setImage(file);
+    }
 
     return (
         <div className={styles.picker}>
@@ -20,7 +30,10 @@ export default function ImagePicker({ label, name }) {
                     id={name}
                     accept='image/png, image/jpeg'
                     name={name}
-                    ref={imageInputRef} />
+                    ref={imageInputRef}
+                    onChange={handleImageChange}
+                />
+
                 <button className={styles.button} type='button' onClick={handlePickImage}>
                     Pick Image
                 </button>

@@ -1,14 +1,15 @@
-import { getMealById } from '@/lib/meals';
+import { getMealById, getMeals } from '@/lib/meals';
 import styles from './page.module.css';
 import Image from 'next/image';
 import Picture from '@/assets/pizza.jpg'
 import { notFound } from 'next/navigation';
 
+
 export default async function SpecificMealPage({ params }) {
 
     const meal = await getMealById(params.id)
 
-    // meal.instructions = meal.instructions.replace(/\n/g, '<br/>');
+    meal.instructions = meal.instructions.replace(/\n/g, '<br/>');
     if (!meal) {
         return notFound();
     }
@@ -32,9 +33,13 @@ export default async function SpecificMealPage({ params }) {
                 </div>
             </header>
             <main>
-                <p className={styles.instructions} dangerouslySetInnerHTML={{ __html: '' }}>
+                {/* <p className={styles.instructions} dangerouslySetInnerHTML={{ __html: '' }}>
                     {meal.instructions}
-                </p>
+                </p> */}
+                <p
+                    className={styles.instructions}
+                    dangerouslySetInnerHTML={{ __html: meal.instructions }}
+                />
             </main>
         </>
     )
