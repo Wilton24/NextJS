@@ -1,4 +1,4 @@
-import { getMealById, getMeals } from '@/lib/meals';
+import { getMealById } from '@/lib/meals';
 import styles from './page.module.css';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -32,9 +32,6 @@ export default async function SpecificMealPage({ params }) {
                 </div>
             </header>
             <main>
-                {/* <p className={styles.instructions} dangerouslySetInnerHTML={{ __html: '' }}>
-                    {meal.instructions}
-                </p> */}
                 <p
                     className={styles.instructions}
                     dangerouslySetInnerHTML={{ __html: meal.instructions }}
