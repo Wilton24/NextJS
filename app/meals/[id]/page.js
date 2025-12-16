@@ -1,7 +1,6 @@
 import { getMealById, getMeals } from '@/lib/meals';
 import styles from './page.module.css';
 import Image from 'next/image';
-import Picture from '@/assets/pizza.jpg'
 import { notFound } from 'next/navigation';
 
 
