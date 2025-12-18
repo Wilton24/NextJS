@@ -19,7 +19,7 @@ export default async function SpecificMealPage({ params }) {
                 <div className={styles.image}>
                     <Image
                         fill
-                        src={meal.image}
+                        src={`https://wilton-nextjs-demo-users-image.s3.us-east-1.amazonaws.com/${meal.image}`}
                         alt={meal.title}
                         className={styles.img}
                     />

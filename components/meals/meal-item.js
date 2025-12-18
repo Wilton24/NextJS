@@ -4,11 +4,14 @@ import Image from 'next/image';
 import classes from './meal-item.module.css';
 
 export default function MealItem({ title, slug, image, summary, creator }) {
+
+    console.log('MealItem image:', image);
+
     return (
         <article className={classes.meal}>
             <header>
                 <div className={classes.image}>
-                    <Image src={image} alt={title} fill />
+                    <Image src={`https://wilton-nextjs-demo-users-image.s3.us-east-1.amazonaws.com/${image}`} alt={title} fill />
                 </div>
                 <div className={classes.headerText}>
                     <h2>{title}</h2>
