@@ -5,8 +5,6 @@ import classes from './meal-item.module.css';
 
 export default function MealItem({ title, slug, image, summary, creator }) {
 
-    console.log('MealItem image:', image);
-
     return (
         <article className={classes.meal}>
             <header>
