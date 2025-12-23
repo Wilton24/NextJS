@@ -3,6 +3,20 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({ params }) {
+    const meal = await getMealById(params.id);
+    if (!meal) {
+        return {
+            title: 'Meal Not Found',
+            description: 'The meal you are looking for does not exist.',
+        }
+    }
+    return {
+        title: meal.title,
+        description: meal.summary,
+    }
+}
+
 
 export default async function SpecificMealPage({ params }) {
 
